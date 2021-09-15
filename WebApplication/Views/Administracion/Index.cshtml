@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "_LAdministracion";
+}
+
+<div class="row">
+    <div class="col-md-3 form-horizontal mx-auto text-center">
+        <h1>Administracion </h1>
+       
+    </div>
+</div>
+
+<br />
+@if (ViewData["error"] != null)
+{
+    <div class="alert alert-danger text-center">@ViewData["error"]</div>
+}

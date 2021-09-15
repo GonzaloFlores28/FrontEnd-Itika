@@ -1,0 +1,30 @@
+﻿@model WebApplication.Models.UsuarioLogin
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<partial name="_UsuarioInfoPartial" model="@ViewData["usuarioInfo"]" />*@
+
+<div class="row">
+    <div class="col-md-3 form-horizontal mx-auto text-center">
+        <h1>Login</h1>
+        <form action="/Login/Index" method="post">
+            <br />
+            <input asp-for="Usuario" class="form-control" placeholder="Usuario" required autofocus />
+            <span asp-validation-for="Usuario" class="text-danger"></span>
+            <br />
+            <input asp-for="Password" class="form-control" placeholder="Contraseña" type="password" required>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <br />
+            <button class="btn btn-primary" type="submit">
+                Iniciar sesión
+            </button>
+        </form>
+    </div>
+</div>
+
+<br />
+@if (ViewData["error"] != null)
+{
+    <div class="alert alert-danger text-center">@ViewData["error"]</div>
+}
